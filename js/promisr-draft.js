@@ -18,7 +18,7 @@ function Bromise(executor) {
   };
   function resolve(value) {
     setTimeout(() => {
-      onResolve_(value); // 核心，让.then接收的回调函数能够异步执行
+      onResolve_(value); // 核心，让.then函数接收的回调函数能够异步执行
     }, 0);
   }
   executor(resolve, null);
