@@ -1,0 +1,25 @@
+<html>
+<body>
+    <div id="mian_div">
+        <li id="time_li">time</li>
+        <li>geekbang</li>
+    </div>
+ 
+    <p id="demo"> 强制布局 demo</p>
+    <button onclick="foo()"> 添加新元素 </button>
+ 
+    <script>
+       function foo() {
+            let time_li = document.getElementById("time_li")
+            for (let i = 0; i < 100; i++) {
+                let main_div = document.getElementById("mian_div")
+                let new_node = document.createElement("li")
+                let textnode = document.createTextNode("time.geekbang")
+                new_node.appendChild(textnode);
+                new_node.offsetHeight = time_li.offsetHeight;
+                document.getElementById("mian_div").appendChild(new_node);
+            }
+        }
+    </script>
+</body>
+</html>
