@@ -6,53 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .wrapper {
-            width: 500px;
-            /* height: 400px; */
-            /* position: absolute; */
-            border: 1px solid rgb(53, 144, 208);
-        }
-        .wrapper-sec {
-            width: 500px;
-            /* height: 400px; */
-            /* float: left; */
-            border: 1px solid rgb(34, 203, 37);
-            position: absolute;
-        }
-        .sec-wrapper {
-            overflow: hidden;
-        }
-        .first,.second {
-            width: 200px;
-            height: 100px;
-            margin-top: 50px;
-            margin-bottom: 50px;
-            border: 1px solid red;
-            float: left;
-        }
+      #content {
+  display: flex;
+  width: 700px;
+}
+
+#content div {
+  flex-basis: 120px;
+  flex: 1;
+  /* flex-basis: 0; */
+  /* border: 3px solid rgba(0,0,0,.2); */
+}
+
+.box {
+  /* flex-shrink: 0; */
+}
+
+.box1 {
+  /* flex-shrink: 1; */
+}
+
     </style>
 </head>
 <body>
     <h3>CSS 练习</h3>
-    <!-- <div class="wrapper">
-        <div class="first">
-            第一个
-        </div>
-        <div class="sec-wrapper">
-            <div class="second">
-                第二个
-            </div>
-        </div>
-    </div> -->
-    <div class="wrapper-sec">
-        <div class="first">
-            第一个
-        </div>
-        <!-- <div class="sec-wrapper">
-            <div class="second">
-                第二个
-            </div>
-        </div> -->
-    </div>
+    <p>the width of content is 500px, flex-basic of flex item is 120px.</p>
+<p>A, B, C are flex-shrink:1. D and E are flex-shrink:2</p>
+<p>the width of D is not the same as A's</p>
+<div id="content">
+  <div class="box" style="background-color:red;">A</div>
+  <div class="box" style="background-color:lightblue;">B</div>
+  <div class="box" style="background-color:yellow;">C</div>
+  <div class="box1" style="background-color:brown;">D</div>
+  <div class="box1" style="background-color:lightgreen;">E</div>
+</div>
+  <script>
+    function _typeOf(value) {
+        if (value === 'null') {
+            return 'null'
+        }
+        const type = typeof value
+        if (type === 'object') {
+            return value instanceof Array ? 'array' : type
+        }
+        return type
+    }
+
+    console.log(_typeOf(44))
+    console.log(_typeOf('444'))
+    console.log(_typeOf(true))
+    console.log(_typeOf(() => {}))
+    console.log(_typeOf([33]))
+    console.log(_typeOf({ff: 44}))
+
+
+  </script>
 </body>
 </html>
