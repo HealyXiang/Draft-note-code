@@ -9,17 +9,36 @@
     <button onclick="foo()"> 添加新元素 </button>
  
     <script>
-       function foo() {
-            let time_li = document.getElementById("time_li")
-            for (let i = 0; i < 100; i++) {
-                let main_div = document.getElementById("mian_div")
-                let new_node = document.createElement("li")
-                let textnode = document.createTextNode("time.geekbang")
-                new_node.appendChild(textnode);
-                new_node.offsetHeight = time_li.offsetHeight;
-                document.getElementById("mian_div").appendChild(new_node);
+    //    function foo() {
+    //         let time_li = document.getElementById("time_li")
+    //         for (let i = 0; i < 100; i++) {
+    //             let main_div = document.getElementById("mian_div")
+    //             let new_node = document.createElement("li")
+    //             let textnode = document.createTextNode("time.geekbang")
+    //             new_node.appendChild(textnode);
+    //             new_node.offsetHeight = time_li.offsetHeight;
+    //             document.getElementById("mian_div").appendChild(new_node);
+    //         }
+    //     }
+    function foo() {
+        var myName = " 极客时间 "
+        let test1 = 1
+        const test2 = 2
+        var innerBar = { 
+            setName:function(newName){
+                myName = newName
+            },
+            getName:function(){
+                console.log(test1)
+                return myName
             }
         }
+        return innerBar
+    }
+    var bar = foo()
+    bar.setName(" 极客邦 ")
+    bar.getName()
+    console.log(bar.getName())
     </script>
 </body>
 </html>
