@@ -1,9 +1,11 @@
-// exports.name = `《React进阶实践指南》`;
-// exports.author = `我不是外星人`;
-// exports.say = function () {
-//   console.log(666);
-// };
+// index.js
+export let num = 0;
+export function add() {
+    ++ num
+}
 
-exports = {
-  name: 'ddfsfds',
-};
+// import { num, add } from "./index.js"
+// console.log(num) // 0
+// add()
+// console.log(num) // 1
+// num = 10 // 抛出错误
